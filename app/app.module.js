@@ -11,6 +11,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var book_component_1 = require("./book.component");
+var product_list_component_1 = require("./products/product-list.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,7 +25,8 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            book_component_1.BookComponent
+            book_component_1.BookComponent,
+            product_list_component_1.ProductListComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })
