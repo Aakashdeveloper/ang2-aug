@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent }  from './app.component';
 import {BookComponent} from './book.component';
 import {ProductListComponent} from './products/product-list.component';
+import {ProductFilterPipe} from './products/product-filter.pipe'
+import {StarComponent} from './shared/star.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {ProductListComponent} from './products/product-list.component';
   declarations: [
     AppComponent ,
     BookComponent,
-     ProductListComponent
+     ProductListComponent,
+     ProductFilterPipe,
+     StarComponent
   ],
   bootstrap: [ AppComponent]
 })
