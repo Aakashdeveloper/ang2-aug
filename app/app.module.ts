@@ -21,7 +21,10 @@ import {WelcomeComponent} from './home/welcome.component';
     HttpModule,
     RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
-      {path: 'welcome',component:WelcomeComponent}
+      {path: 'product/:id', component: ProductDetailComponent},
+      {path: 'welcome',component:WelcomeComponent},
+      {path:'',redirectTo:'welcome', pathMatch:'full'},
+      {path:'**',redirectTo:'welcome',pathMatch:'full'}
     ])
   ],
   declarations: [

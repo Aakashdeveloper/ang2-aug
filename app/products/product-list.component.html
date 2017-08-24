@@ -33,7 +33,7 @@
                 <tbody>
                     <tr *ngFor='let product of products| productFilter:listFilter'>
                         <td><img [src]="product.imageUrl" [style.width.px]='imageWidth' *ngIf='showImage'></td>
-                        <td>{{product.productName | uppercase}}</td>
+                        <td><a [routerLink]="['/product',product.productId]">{{product.productName | uppercase}}</a></td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td>{{product.price | currency: 'GBP':true}}</td>
