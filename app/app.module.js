@@ -10,11 +10,14 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var book_component_1 = require("./book.component");
 var product_list_component_1 = require("./products/product-list.component");
+var product_detail_component_1 = require("./products/product-detail.component");
 var product_filter_pipe_1 = require("./products/product-filter.pipe");
 var star_component_1 = require("./shared/star.component");
+var welcome_component_1 = require("./home/welcome.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,14 +28,20 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            router_1.RouterModule.forRoot([
+                { path: 'products', component: product_list_component_1.ProductListComponent },
+                { path: 'welcome', component: welcome_component_1.WelcomeComponent }
+            ])
         ],
         declarations: [
             app_component_1.AppComponent,
             book_component_1.BookComponent,
             product_list_component_1.ProductListComponent,
             product_filter_pipe_1.ProductFilterPipe,
-            star_component_1.StarComponent
+            star_component_1.StarComponent,
+            product_detail_component_1.ProductDetailComponent,
+            welcome_component_1.WelcomeComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })

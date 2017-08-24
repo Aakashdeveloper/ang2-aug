@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import {HttpModule} from '@angular/http'
+import {HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
 
 import { AppComponent }  from './app.component';
 import {BookComponent} from './book.component';
 import {ProductListComponent} from './products/product-list.component';
+import {ProductDetailComponent} from './products/product-detail.component';
 import {ProductFilterPipe} from './products/product-filter.pipe'
 import {StarComponent} from './shared/star.component';
+import {WelcomeComponent} from './home/welcome.component';
 
 
 
@@ -15,14 +18,20 @@ import {StarComponent} from './shared/star.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {path: 'products', component: ProductListComponent},
+      {path: 'welcome',component:WelcomeComponent}
+    ])
   ],
   declarations: [
     AppComponent ,
     BookComponent,
-     ProductListComponent,
-     ProductFilterPipe,
-     StarComponent
+    ProductListComponent,
+    ProductFilterPipe,
+    StarComponent,
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   bootstrap: [ AppComponent]
 })
