@@ -13,11 +13,7 @@ var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var book_component_1 = require("./book.component");
-var product_list_component_1 = require("./products/product-list.component");
-var product_detail_component_1 = require("./products/product-detail.component");
-var product_filter_pipe_1 = require("./products/product-filter.pipe");
-var star_component_1 = require("./shared/star.component");
-var product_gaurd_service_1 = require("./products/product-gaurd.service");
+var product_module_1 = require("./products/product.module");
 var welcome_component_1 = require("./home/welcome.component");
 var AppModule = (function () {
     function AppModule() {
@@ -30,10 +26,10 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
+            product_module_1.ProductModule,
             router_1.RouterModule.forRoot([
-                { path: 'products', component: product_list_component_1.ProductListComponent },
-                { path: 'product/:id', canActivate: [product_gaurd_service_1.ProductDetailGuard], component: product_detail_component_1.ProductDetailComponent },
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
+                { path: 'book', component: book_component_1.BookComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
             ])
@@ -41,13 +37,8 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             book_component_1.BookComponent,
-            product_list_component_1.ProductListComponent,
-            product_filter_pipe_1.ProductFilterPipe,
-            star_component_1.StarComponent,
-            product_detail_component_1.ProductDetailComponent,
             welcome_component_1.WelcomeComponent
         ],
-        providers: [product_gaurd_service_1.ProductDetailGuard],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

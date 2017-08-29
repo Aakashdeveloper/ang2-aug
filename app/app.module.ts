@@ -6,11 +6,7 @@ import {RouterModule} from '@angular/router';
 
 import { AppComponent }  from './app.component';
 import {BookComponent} from './book.component';
-import {ProductListComponent} from './products/product-list.component';
-import {ProductDetailComponent} from './products/product-detail.component';
-import {ProductFilterPipe} from './products/product-filter.pipe'
-import {StarComponent} from './shared/star.component';
-import {ProductDetailGuard} from './products/product-gaurd.service'
+import {ProductModule} from './products/product.module'
 import {WelcomeComponent} from './home/welcome.component';
 
 
@@ -20,10 +16,10 @@ import {WelcomeComponent} from './home/welcome.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    ProductModule,
     RouterModule.forRoot([
-      {path: 'products', component: ProductListComponent},
-      {path: 'product/:id', canActivate:[ProductDetailGuard],  component: ProductDetailComponent},
       {path: 'welcome',component:WelcomeComponent},
+       {path: 'book',component:BookComponent},
       {path:'',redirectTo:'welcome', pathMatch:'full'},
       {path:'**',redirectTo:'welcome',pathMatch:'full'}
     ])
@@ -31,13 +27,8 @@ import {WelcomeComponent} from './home/welcome.component';
   declarations: [
     AppComponent ,
     BookComponent,
-    ProductListComponent,
-    ProductFilterPipe,
-    StarComponent,
-    ProductDetailComponent,
     WelcomeComponent
   ],
-  providers:[ProductDetailGuard],
   bootstrap: [ AppComponent]
 })
 export class AppModule { }
