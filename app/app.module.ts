@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
 
+
 import { AppComponent }  from './app.component';
 import {BookComponent} from './book.component';
 import {ProductModule} from './products/product.module'
 import {WelcomeComponent} from './home/welcome.component';
+
 
 
 
